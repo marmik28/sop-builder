@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Mobile styles */
+@media only screen and (max-width: 768px) {
+    .responsive-container {
+      flex-direction: column;
+    }
+  
+    .form-container {
+      width: 100%;
+    }
+  
+    .chat-container {
+      width: 100%;
+      margin-top: 20px; /* Adds some space between the form and textarea */
+    }
+  }
+  
+  /* Tablet styles */
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .text-size-tablet {
+      font-size: 16px; /* Adjust as needed */
+    }
+  }
+  

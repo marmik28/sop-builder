@@ -49,7 +49,7 @@ const ChatGPT: React.FC<ChatGPTProps> = ({ prompt }) => {
       <textarea
         value={response}
         onChange={() => {}}
-        className="w-full h-full border rounded-lg p-2"
+        className="w-full h-full border rounded-lg p-2 text-size-tablet"
       />
     </div>
   );
