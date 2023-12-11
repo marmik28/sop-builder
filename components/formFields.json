@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Introduction",
+    "sectionPrompt": "`Compose a two-line only introduction for a Statement of Purpose for Canada Visa application",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Name",
+        "placeholder": "Your Name",
+        "required": true
+      },
+      {
+        "name": "nationality",
+        "label": "Nationality",
+        "placeholder": "Your Nationality",
+        "required": true
+      },
+      {
+        "name": "program",
+        "label": "Program",
+        "placeholder": "Desired Program in Canada",
+        "required": true
+      },
+      {
+        "name": "degree",
+        "label": "Degree",
+        "placeholder": "Type of Degree",
+        "required": true
+      },
+      {
+        "name": "university",
+        "label": "University",
+        "placeholder": "Desired University in Canada",
+        "required": true
+      }
+    ]
+  },
+  {
+    "title": "Another Title",
+    "sectionPrompt": "Write one line define of each word below",
+    "fields": [
+      {
+        "name": "Word 1",
+        "label": "word1",
+        "placeholder": "Field 1 Placeholder",
+        "required": true
+      },
+      {
+        "name": "Word 2",
+        "label": "word2",
+        "placeholder": "Field 2 Placeholder",
+        "required": true
+      },
+      {
+        "name": "Word 3",
+        "label": "word3",
+        "placeholder": "Field 3 Placeholder",
+        "required": true
+      }
+    ]
+  },
+  {
+    "title": "3rd Page",
+    "sectionPrompt": "Write each word below in a sentence",
+    "fields": [
+      {
+        "name": "Hello",
+        "label": "hello",
+        "placeholder": "Field 1 Placeholder",
+        "required": true
+      },
+      {
+        "name": "world",
+        "label": "world",
+        "placeholder": "Field 2 Placeholder",
+        "required": true
+      },
+      {
+        "name": "Job Experience",
+        "label": "job experience",
+        "placeholder": "Field 3 Placeholder",
+        "required": true
+      }
+    ]
+  }
+]
