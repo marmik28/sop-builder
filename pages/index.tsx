@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Form from "../components/Form";
 import ChatGPT from "../components/ChatGPT";
 import formFields from "../components/formFields.json";
+import "../app/globals.css";
 
 const Home: React.FC = () => {
   const [generatedText, setGeneratedText] = useState("");
@@ -37,20 +38,22 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 py-12">
-      <div className="container mx-auto p-6 bg-white rounded-lg shadow-lg">
-        <h1 className="text-[40px] pl-[32px] font-semibold mb-6">
-          SOP Builder
-        </h1>
-        <div className="flex">
-          <Form
-            onFormSubmit={handleFormSubmit}
-            sections={formFields}
-            currentSection={currentSection}
-            onPrevClick={handlePrevClick}
-            onNextClick={handleNextClick}
-            sectionPrompt={formFields[currentSection].sectionPrompt}
-          />
-          <ChatGPT key={key} prompt={generatedText} />
+      <h1 className="text-[40px] pl-[32px] font-semibold mb-6">SOP Builder</h1>
+      <div className="container mx-auto p-6 bg-white rounded-lg shadow-lg ">
+        <div className="flex responsive-container">
+          <div className="form-container w-[500px]">
+            <Form
+              onFormSubmit={handleFormSubmit}
+              sections={formFields}
+              currentSection={currentSection}
+              onPrevClick={handlePrevClick}
+              onNextClick={handleNextClick}
+              sectionPrompt={formFields[currentSection].sectionPrompt}
+            />
+          </div>
+          <div className="chat-container w-full">
+            <ChatGPT key={key} prompt={generatedText} />
+          </div>
         </div>
       </div>
     </div>

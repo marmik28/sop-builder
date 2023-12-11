@@ -52,8 +52,8 @@ const Form: React.FC<FormProps> = ({
   };
 
   return (
-    <div className="max-w-2xl w-[500px] ">
-      <form className="bg-[#f5f5f5] shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div className="max-w-2xl">
+      <form className="bg-[#f5f5f5] shadow-md rounded px-8 pt-6 pb-8 mb-4 text-size-tablet">
         <h2 className="text-xl font-semibold mt-4 mb-2">{section.title}</h2>
         {section.fields.map((field) => (
           <div className="mb-4" key={field.name}>
