@@ -16,12 +16,10 @@ const Home: React.FC = () => {
 
     // Construct the prompt dynamically using formField.prompt and formData
     const prompt = `${
-      currentFormFields.sectionPrompt
-    }\n${currentFormFields.fields
-      .map((field: any) => `${field.label}: ${formData[field.name]}`)
-      .join(
-        ",\n"
-      )},\nEnsure that the language is formal, engaging, and aligned to establish a strong SOP.`;
+      currentFormFields.sectionPrompt}
+      \n${currentFormFields.fields.map((field: any) => `${field.label}: ${formData[field.name]}`)
+      .join(",\n")},
+      \nEnsure that the language is formal, engaging, and aligned to establish a strong SOP.`;
 
     // Set the generatedText with the response
     setGeneratedText(prompt);

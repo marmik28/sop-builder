@@ -15,11 +15,11 @@ const ChatGPT: React.FC<ChatGPTProps> = ({ prompt }) => {
         const result = await axios.post(
           "https://api.openai.com/v1/chat/completions",
           {
-            model: "gpt-3.5-turbo",
+            model: "gpt-4",
             messages: [
               {
                 role: "system",
-                content: "You are a SOP writer.",
+                content: "You are a professional SOP writer for Canada visa applications.",
               },
               {
                 role: "user",
@@ -46,11 +46,9 @@ const ChatGPT: React.FC<ChatGPTProps> = ({ prompt }) => {
 
   return (
     <div className="w-full h-screen px-[10px]">
-      <textarea
-        value={response}
-        onChange={() => {}}
-        className="w-full h-full border rounded-lg p-2 text-size-tablet"
-      />
+      <div className="w-full h-full border rounded-lg p-2 text-size-tablet" onChange={() => {}}>
+        {response}
+        </div>
     </div>
   );
 };
