@@ -1,7 +1,7 @@
 [
   {
     "title": "Introduction",
-    "sectionPrompt": "Using only 250 words and 2 paragraphs compose an introduction for a Statement of Purpose (SOP) for a Canada Visa application, incorporating the following details:",
+    "sectionPrompt": "In 250-300 words AND two paragraphs, craft an introduction for a Statement of Purpose for a Canada Visa application. This introduction should contain the following personal details:",
     "fields": [
       {
         "name": "name",
@@ -37,7 +37,7 @@
   },
   {
     "title": "Educational Background",
-    "sectionPrompt": "What prompt should go here?",
+    "sectionPrompt": "Compose a detailed and engaging Educational Background section for a Statement of Purpose for a Canada Visa application. In about 300-350 words, structured in 2-3 paragraphs, this section should reflect on the applicant's academic journey, major achievements, and relevant experiences. It should also illustrate how their educational background has prepared them for the desired program in Canada:",
     "fields": [
       {
         "name": "educationLevel",
@@ -115,7 +115,7 @@
   },
   {
     "title": "Study Plans",
-    "sectionPrompt": "Using only 250 words and 2 paragraphs compose a Why choose this university section for a Statement of Purpose (SOP) for a Canada Visa application, incorporating the following details:",
+    "sectionPrompt": "In a succinct 300-350-words, two-paragraph format, articulate your study plans for the Canada Visa SOP. This section should convincingly explain your choice of university and course, and how it aligns with your career and personal growth objectives. Additionally, address any shift in your field of study and the rationale behind it:",
     "fields": [
       {
         "name": "fieldOfStudy",

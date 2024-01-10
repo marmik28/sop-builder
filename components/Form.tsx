@@ -54,11 +54,11 @@ const Form: React.FC<FormProps> = ({
   return (
     <div className="max-w-2xl">
       <form className="bg-[#f5f5f5] shadow-md rounded px-8 pt-6 pb-8 mb-4 text-size-tablet">
-        <h2 className="text-xl font-semibold mt-4 mb-2">{section.title}</h2>
+        <h2 className="text-[26px] font-semibold mt-4 mb-2">{section.title}</h2>
         {section.fields.map((field) => (
           <div className="mb-4" key={field.name}>
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 text-m font-bold mb-1"
               htmlFor={field.name}
             >
               {field.label}
@@ -78,7 +78,7 @@ const Form: React.FC<FormProps> = ({
 
         <div className="flex flex-col">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
+            className="bg-[#FFCB70] hover:bg-[#f59723] text-black font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
             type="submit"
             onClick={handleSubmit}
           >
@@ -88,7 +88,7 @@ const Form: React.FC<FormProps> = ({
           <div className="flex flex-row">
             {currentSection > 0 && (
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white w-1/2 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 mr-4"
+                className="bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 mr-4"
                 type="button"
                 onClick={onPrevClick}
               >
@@ -98,7 +98,7 @@ const Form: React.FC<FormProps> = ({
 
             {currentSection < sections.length - 1 && (
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white w-1/2 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
+                className="bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
                 type="button"
                 onClick={onNextClick}
               >

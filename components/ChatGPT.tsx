@@ -19,7 +19,7 @@ const ChatGPT: React.FC<ChatGPTProps> = ({ prompt }) => {
             messages: [
               {
                 role: "system",
-                content: "You are a professional SOP writer for Canada visa applications.",
+                content: "You write statement of purpose (SOP) for Canada visa applications.",
               },
               {
                 role: "user",
