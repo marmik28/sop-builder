@@ -13,10 +13,7 @@ const Home: React.FC = () => {
   const handleFormSubmit = (formData: any) => {
     const currentFormFields = formFields[currentSection];
 
-    const prompt = `${
-      currentFormFields.sectionPrompt}
-      \n${currentFormFields.fields.map((field: any) => `${field.label}: ${formData[field.name]}`)
-      .join(",\n")},
+    const prompt = `${currentFormFields.fields.map((field: any) => `${field.label}: ${formData[field.name]}`).join(",\n")},
       \nEnsure that the language is formal, engaging, and aligned to establish a strong SOP.`;
 
     setGeneratedText(prompt);
@@ -43,7 +40,6 @@ const Home: React.FC = () => {
               currentSection={currentSection}
               onPrevClick={handlePrevClick}
               onNextClick={handleNextClick}
-              sectionPrompt={formFields[currentSection].sectionPrompt}
             />
           </div>
           <div className="chat-container w-full">
