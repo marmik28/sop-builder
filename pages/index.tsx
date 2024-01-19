@@ -17,7 +17,7 @@ const Home: React.FC = () => {
       currentFormFields.sectionPrompt}
       \n${currentFormFields.fields.map((field: any) => `${field.label}: ${formData[field.name]}`)
       .join(",\n")},
-      \nEnsure that the language is formal but human like, engaging, and aligned to establish a strong SOP.`;
+      \nEnsure that the language is formal, engaging, and aligned to establish a strong SOP.`;
 
     setGeneratedText(prompt);
     setKey((prevKey) => prevKey + 1);
