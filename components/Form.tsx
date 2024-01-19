@@ -77,35 +77,35 @@ const Form: React.FC<FormProps> = ({
         ))}
 
         <div className="flex flex-col">
-          <button
-            className="bg-[#FFCB70] hover:bg-[#f59723] text-black font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
-            type="submit"
-            onClick={handleSubmit}
-          >
-            Generate {section.title}
-          </button>
-
           <div className="flex flex-row">
-            {currentSection > 0 && (
-              <button
-                className="bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 mr-4"
-                type="button"
-                onClick={onPrevClick}
-              >
-                Previous
-              </button>
-            )}
+            <button
+              className="bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 mr-4"
+              type="button"
+              onClick={onPrevClick}
+              disabled={currentSection === 0}
+            >
+              Previous
+            </button>
 
-            {currentSection < sections.length - 1 && (
-              <button
-                className="bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
-                type="button"
-                onClick={onNextClick}
-              >
-                Next
-              </button>
-            )}
+            <button
+              className="bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
+              type="button"
+              onClick={onNextClick}
+              disabled={currentSection === sections.length - 1}
+            >
+              Next
+            </button>
           </div>
+
+          {currentSection === sections.length - 1 && (
+            <button
+              className="bg-[#FFCB70] hover:bg-[#f59723] text-black font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
+              type="submit"
+              onClick={handleSubmit}
+            >
+              Generate
+            </button>
+          )}
         </div>
       </form>
     </div>
