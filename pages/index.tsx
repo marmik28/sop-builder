@@ -11,14 +11,17 @@ const Home: React.FC = () => {
   const [currentSection, setCurrentSection] = useState(0);
 
   const handleFormSubmit = (formData: any) => {
-    const currentFormFields = formFields[currentSection];
 
-    const prompt = `${currentFormFields.fields.map((field: any) => `${field.label}: ${formData[field.name]}`).join(",\n")},
-      \nEnsure that the language is formal, engaging, and aligned to establish a strong SOP.`;
-
+    const prompt = formFields.map(section => section.fields.map(field => `${field.label}: ${formData[field.name]}`
+      ).join(",\n")
+    ).join(",\n\n") + 
+    "\nEnsure that the language is formal, engaging, and aligned to establish a strong SOP.";
+  
     setGeneratedText(prompt);
-    setKey((prevKey) => prevKey + 1);
+    setKey(prevKey => prevKey + 1);
+
   };
+  
 
   const handleNextClick = () => {
     setCurrentSection(currentSection + 1);
