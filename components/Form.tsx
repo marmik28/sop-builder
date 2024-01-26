@@ -18,27 +18,25 @@ interface FormProps {
   onFormSubmit: (formData: any) => void;
   sections: FormSection[];
   currentSection: number;
-  onPrevClick: () => void;
-  onNextClick: () => void;
 }
 
 const Form: React.FC<FormProps> = ({
   onFormSubmit,
   sections,
-  currentSection,
-  onPrevClick,
-  onNextClick,
 }) => {
 
-  const section = sections[currentSection];
+  
   const initialFormData: Record<string, string> = {};
-
-  section.fields.forEach((field) => {
-    initialFormData[field.name] = "";
-  });
 
   const [formData, setFormData] = useState(initialFormData);
   const [currentSection, setCurrentSection] = useState(0);
+
+  const section = sections[currentSection];
+
+  
+  section.fields.forEach((field) => {
+    initialFormData[field.name] = "";
+  });
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -51,6 +49,20 @@ const Form: React.FC<FormProps> = ({
     e.preventDefault();
     onFormSubmit(formData);
   };
+
+  const handleDotClick = (index: number) => {
+    setCurrentSection(index);
+  };
+
+  
+  const handleNextClick = () => {
+    setCurrentSection(currentSection + 1);
+  };
+
+  const handlePrevClick = () => {
+    setCurrentSection(currentSection - 1);
+  };
+
 
   return (
     <div className="max-w-2xl">
@@ -84,7 +96,7 @@ const Form: React.FC<FormProps> = ({
                 currentSection === 0 ? "opacity-50 cursor-not-allowed" : ""
               }`}
               type="button"
-              onClick={onPrevClick}
+              onClick={handlePrevClick}
               disabled={currentSection === 0}
             >
               Previous
@@ -97,7 +109,7 @@ const Form: React.FC<FormProps> = ({
                   : ""
               }`}
               type="button"
-              onClick={onNextClick}
+              onClick={handleNextClick}
               disabled={currentSection === sections.length - 1}
             >
               Next
@@ -105,15 +117,16 @@ const Form: React.FC<FormProps> = ({
           </div>
 
           <div className="flex justify-center items-center space-x-2 mt-4">
-            {sections.map((_, index) => (
-              <div
-                key={index}
-                className={`h-3 w-3 rounded-full ${
-                  currentSection === index ? "bg-[#f59723]" : "bg-gray-300"
-                }`}
-              />
-            ))}
-          </div>
+          {sections.map((_, index) => (
+            <div
+              key={index}
+              className={`h-3 w-3 rounded-full cursor-pointer ${
+                currentSection === index ? "bg-[#f59723]" : "bg-gray-300"
+              }`}
+              onClick={() => handleDotClick(index)}
+            />
+          ))}
+        </div>
 
           {currentSection === sections.length - 1 && (
             <button

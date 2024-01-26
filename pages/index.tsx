@@ -20,14 +20,6 @@ const Home: React.FC = () => {
   };
   
 
-  const handleNextClick = () => {
-    setCurrentSection(currentSection + 1);
-  };
-
-  const handlePrevClick = () => {
-    setCurrentSection(currentSection - 1);
-  };
-
   return (
     <div className="min-h-screen">
       <div className="flex items-center justify-center"><h1 className="text-[40px] font-semibold">SOP Builder</h1></div>
@@ -38,8 +30,6 @@ const Home: React.FC = () => {
               onFormSubmit={handleFormSubmit}
               sections={formFields}
               currentSection={currentSection}
-              onPrevClick={handlePrevClick}
-              onNextClick={handleNextClick}
             />
           </div>
           <div className="chat-container w-full">
