@@ -29,6 +29,7 @@ const Form: React.FC<FormProps> = ({
   onPrevClick,
   onNextClick,
 }) => {
+
   const section = sections[currentSection];
   const initialFormData: Record<string, string> = {};
 
@@ -37,6 +38,7 @@ const Form: React.FC<FormProps> = ({
   });
 
   const [formData, setFormData] = useState(initialFormData);
+  const [currentSection, setCurrentSection] = useState(0);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -78,7 +80,9 @@ const Form: React.FC<FormProps> = ({
         <div className="flex flex-col">
           <div className="flex flex-row">
             <button
-              className={`bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 mr-4 ${currentSection === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 mr-4 ${
+                currentSection === 0 ? "opacity-50 cursor-not-allowed" : ""
+              }`}
               type="button"
               onClick={onPrevClick}
               disabled={currentSection === 0}
@@ -87,13 +91,28 @@ const Form: React.FC<FormProps> = ({
             </button>
 
             <button
-              className={`bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 ${currentSection === sections.length - 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 ${
+                currentSection === sections.length - 1
+                  ? "opacity-50 cursor-not-allowed"
+                  : ""
+              }`}
               type="button"
               onClick={onNextClick}
               disabled={currentSection === sections.length - 1}
             >
               Next
             </button>
+          </div>
+
+          <div className="flex justify-center items-center space-x-2 mt-4">
+            {sections.map((_, index) => (
+              <div
+                key={index}
+                className={`h-3 w-3 rounded-full ${
+                  currentSection === index ? "bg-[#f59723]" : "bg-gray-300"
+                }`}
+              />
+            ))}
           </div>
 
           {currentSection === sections.length - 1 && (
