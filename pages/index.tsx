@@ -8,7 +8,7 @@ import "../app/globals.css";
 const Home: React.FC = () => {
   const [generatedText, setGeneratedText] = useState("");
   const [key, setKey] = useState(0);
-  const [currentSection, setCurrentSection] = useState(0);
+  const [currentSection] = useState(0);
 
   const handleFormSubmit = (formData: any) => {
 

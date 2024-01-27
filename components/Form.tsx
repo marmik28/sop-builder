@@ -20,12 +20,7 @@ interface FormProps {
   currentSection: number;
 }
 
-const Form: React.FC<FormProps> = ({
-  onFormSubmit,
-  sections,
-}) => {
-
-  
+const Form: React.FC<FormProps> = ({ onFormSubmit, sections }) => {
   const initialFormData: Record<string, string> = {};
 
   const [formData, setFormData] = useState(initialFormData);
@@ -33,7 +28,6 @@ const Form: React.FC<FormProps> = ({
 
   const section = sections[currentSection];
 
-  
   section.fields.forEach((field) => {
     initialFormData[field.name] = "";
   });
@@ -54,7 +48,6 @@ const Form: React.FC<FormProps> = ({
     setCurrentSection(index);
   };
 
-  
   const handleNextClick = () => {
     setCurrentSection(currentSection + 1);
   };
@@ -62,7 +55,6 @@ const Form: React.FC<FormProps> = ({
   const handlePrevClick = () => {
     setCurrentSection(currentSection - 1);
   };
-
 
   return (
     <div className="max-w-2xl">
@@ -117,20 +109,24 @@ const Form: React.FC<FormProps> = ({
           </div>
 
           <div className="flex justify-center items-center space-x-2 mt-4">
-          {sections.map((_, index) => (
-            <div
-              key={index}
-              className={`h-3 w-3 rounded-full cursor-pointer ${
-                currentSection === index ? "bg-[#f59723]" : "bg-gray-300"
-              }`}
-              onClick={() => handleDotClick(index)}
-            />
-          ))}
-        </div>
+            {sections.map((_, index) => (
+              <div
+                key={index}
+                className={`h-3 w-3 mx-1 rounded-full cursor-pointer transition-colors duration-300 
+                        ${
+                          currentSection === index
+                            ? "bg-[#f59723] hover:bg-[#e6891f]"
+                            : "bg-gray-300 hover:bg-gray-400"
+                        }
+                        `}
+                onClick={() => handleDotClick(index)}
+              />
+            ))}
+          </div>
 
           {currentSection === sections.length - 1 && (
             <button
-              className="bg-[#FFCB70] hover:bg-[#f59723] text-black font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
+              className="bg-[#FFCB70] hover:bg-[#f59723] text-black font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
               type="submit"
               onClick={handleSubmit}
             >

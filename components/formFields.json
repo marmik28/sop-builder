@@ -44,21 +44,9 @@
         "required": true
       },
       {
-        "name": "fieldOfStudy",
-        "label": "Field of study",
-        "placeholder": "Your Field of Study",
-        "required": true
-      },
-      {
         "name": "institutions",
         "label": "Names of institutions",
         "placeholder": "Names of Educational Institutions",
-        "required": true
-      },
-      {
-        "name": "attendanceDates",
-        "label": "Dates of attendance",
-        "placeholder": "Attendance Dates",
         "required": true
       },
       {
@@ -78,35 +66,6 @@
         "label": "English Language test taken",
         "placeholder": "English Language Test Taken",
         "required": false
-      }
-    ]
-  },
-  {
-    "title": "Professional Experience",
-    "fields": [
-      {
-        "name": "jobTitles",
-        "label": "Current and previous job titles",
-        "placeholder": "Your Job Titles",
-        "required": true
-      },
-      {
-        "name": "employers",
-        "label": "Names of employers",
-        "placeholder": "Names of Employers",
-        "required": true
-      },
-      {
-        "name": "employmentDuration",
-        "label": "Duration of each employment",
-        "placeholder": "Employment Duration",
-        "required": true
-      },
-      {
-        "name": "responsibilitiesAchievements",
-        "label": "Key responsibilities and achievements",
-        "placeholder": "Your Key Responsibilities and Achievements",
-        "required": true
       }
     ]
   },
@@ -142,12 +101,6 @@
         "label": "How this study will benefit your career or personal growth",
         "placeholder": "Benefits to Career/Personal Growth",
         "required": true
-      },
-      {
-        "name": "changeFieldReason",
-        "label": "If changing the field then state reason",
-        "placeholder": "Reason for Changing Field (if applicable)",
-        "required": false
       }
     ]
   },
