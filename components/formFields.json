@@ -1,7 +1,6 @@
 [
   {
     "title": "Introduction",
-    "sectionPrompt": "`Compose a two-line only introduction for a Statement of Purpose for Canada Visa application",
     "fields": [
       {
         "name": "name",
@@ -36,49 +35,140 @@
     ]
   },
   {
-    "title": "Another Title",
-    "sectionPrompt": "Write one line define of each word below",
+    "title": "Educational Background",
     "fields": [
       {
-        "name": "Word 1",
-        "label": "word1",
-        "placeholder": "Field 1 Placeholder",
+        "name": "educationLevel",
+        "label": "Highest level of education achieved",
+        "placeholder": "Your Highest Education Level",
         "required": true
       },
       {
-        "name": "Word 2",
-        "label": "word2",
-        "placeholder": "Field 2 Placeholder",
+        "name": "institutions",
+        "label": "Names of institutions",
+        "placeholder": "Names of Educational Institutions",
         "required": true
       },
       {
-        "name": "Word 3",
-        "label": "word3",
-        "placeholder": "Field 3 Placeholder",
+        "name": "degreesCertifications",
+        "label": "Degrees or certifications earned",
+        "placeholder": "Degrees or Certifications Earned",
+        "required": true
+      },
+      {
+        "name": "academicAchievements",
+        "label": "Academic achievements",
+        "placeholder": "Your Academic Achievements",
+        "required": false
+      },
+      {
+        "name": "englishLanguageTest",
+        "label": "English Language test taken",
+        "placeholder": "English Language Test Taken",
+        "required": false
+      }
+    ]
+  },
+  {
+    "title": "Study Plans",
+    "fields": [
+      {
+        "name": "fieldOfStudy",
+        "label": "Intended field of study in Canada",
+        "placeholder": "Your Intended Field of Study",
+        "required": true
+      },
+      {
+        "name": "institutions",
+        "label": "Names of potential institutions/University",
+        "placeholder": "Names of Potential Institutions/University",
+        "required": true
+      },
+      {
+        "name": "courseType",
+        "label": "Course Type",
+        "placeholder": "Type of Course",
+        "required": true
+      },
+      {
+        "name": "universityReason",
+        "label": "Any specific reason to choose the university",
+        "placeholder": "Reason for Choosing University",
+        "required": false
+      },
+      {
+        "name": "careerPersonalGrowth",
+        "label": "How this study will benefit your career or personal growth",
+        "placeholder": "Benefits to Career/Personal Growth",
         "required": true
       }
     ]
   },
   {
-    "title": "3rd Page",
-    "sectionPrompt": "Write each word below in a sentence",
+    "title": "Work Plans",
     "fields": [
       {
-        "name": "Hello",
-        "label": "hello",
-        "placeholder": "Field 1 Placeholder",
+        "name": "industrySector",
+        "label": "Intended industry or sector",
+        "placeholder": "Intended Industry/Sector",
         "required": true
       },
       {
-        "name": "world",
-        "label": "world",
-        "placeholder": "Field 2 Placeholder",
+        "name": "rolesPositions",
+        "label": "Specific roles or positions sought",
+        "placeholder": "Specific Roles/Positions",
         "required": true
       },
       {
-        "name": "Job Experience",
-        "label": "job experience",
-        "placeholder": "Field 3 Placeholder",
+        "name": "professionalDevelopment",
+        "label": "How this work experience will contribute to your professional development",
+        "placeholder": "Contribution to Professional Development",
+        "required": true
+      }
+    ]
+  },
+  {
+    "title": "Financial Information",
+    "fields": [
+      {
+        "name": "financialSupport",
+        "label": "Means of financial support during the stay",
+        "placeholder": "Means of Financial Support",
+        "required": true
+      },
+      {
+        "name": "proofOfFunds",
+        "label": "Proof of funds (if required)",
+        "placeholder": "Proof of Funds (if required)",
+        "required": false
+      },
+      {
+        "name": "costOfLiving",
+        "label": "Cost of living",
+        "placeholder": "Cost of Living",
+        "required": true
+      }
+    ]
+  },
+  {
+    "title": "Ties to Home Country",
+    "fields": [
+      {
+        "name": "familyTies",
+        "label": "Family",
+        "placeholder": "Family Ties",
+        "required": true
+      },
+      {
+        "name": "employmentTies",
+        "label": "Employment",
+        "placeholder": "Employment Ties",
+        "required": true
+      },
+      {
+        "name": "propertyCommitments",
+        "label": "Property or other significant commitments",
+        "placeholder": "Property/Commitments",
         "required": true
       }
     ]

@@ -18,26 +18,19 @@ interface FormProps {
   onFormSubmit: (formData: any) => void;
   sections: FormSection[];
   currentSection: number;
-  onPrevClick: () => void;
-  onNextClick: () => void;
-  sectionPrompt: string;
 }
 
-const Form: React.FC<FormProps> = ({
-  onFormSubmit,
-  sections,
-  currentSection,
-  onPrevClick,
-  onNextClick,
-}) => {
-  const section = sections[currentSection];
+const Form: React.FC<FormProps> = ({ onFormSubmit, sections }) => {
   const initialFormData: Record<string, string> = {};
+
+  const [formData, setFormData] = useState(initialFormData);
+  const [currentSection, setCurrentSection] = useState(0);
+
+  const section = sections[currentSection];
 
   section.fields.forEach((field) => {
     initialFormData[field.name] = "";
   });
-
-  const [formData, setFormData] = useState(initialFormData);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -51,14 +44,26 @@ const Form: React.FC<FormProps> = ({
     onFormSubmit(formData);
   };
 
+  const handleDotClick = (index: number) => {
+    setCurrentSection(index);
+  };
+
+  const handleNextClick = () => {
+    setCurrentSection(currentSection + 1);
+  };
+
+  const handlePrevClick = () => {
+    setCurrentSection(currentSection - 1);
+  };
+
   return (
     <div className="max-w-2xl">
       <form className="bg-[#f5f5f5] shadow-md rounded px-8 pt-6 pb-8 mb-4 text-size-tablet">
-        <h2 className="text-xl font-semibold mt-4 mb-2">{section.title}</h2>
+        <h2 className="text-[26px] font-semibold mt-4 mb-2">{section.title}</h2>
         {section.fields.map((field) => (
           <div className="mb-4" key={field.name}>
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 text-m font-bold mb-1"
               htmlFor={field.name}
             >
               {field.label}
@@ -77,35 +82,57 @@ const Form: React.FC<FormProps> = ({
         ))}
 
         <div className="flex flex-col">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
-            type="submit"
-            onClick={handleSubmit}
-          >
-            Generate {section.title}
-          </button>
-
           <div className="flex flex-row">
-            {currentSection > 0 && (
-              <button
-                className="bg-blue-500 hover:bg-blue-700 text-white w-1/2 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 mr-4"
-                type="button"
-                onClick={onPrevClick}
-              >
-                Previous
-              </button>
-            )}
+            <button
+              className={`bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 mr-4 ${
+                currentSection === 0 ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+              type="button"
+              onClick={handlePrevClick}
+              disabled={currentSection === 0}
+            >
+              Previous
+            </button>
 
-            {currentSection < sections.length - 1 && (
-              <button
-                className="bg-blue-500 hover:bg-blue-700 text-white w-1/2 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
-                type="button"
-                onClick={onNextClick}
-              >
-                Next
-              </button>
-            )}
+            <button
+              className={`bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 ${
+                currentSection === sections.length - 1
+                  ? "opacity-50 cursor-not-allowed"
+                  : ""
+              }`}
+              type="button"
+              onClick={handleNextClick}
+              disabled={currentSection === sections.length - 1}
+            >
+              Next
+            </button>
           </div>
+
+          <div className="flex justify-center items-center space-x-2 mt-4">
+            {sections.map((_, index) => (
+              <div
+                key={index}
+                className={`h-3 w-3 mx-1 rounded-full cursor-pointer transition-colors duration-300 
+                        ${
+                          currentSection === index
+                            ? "bg-[#f59723] hover:bg-[#e6891f]"
+                            : "bg-gray-300 hover:bg-gray-400"
+                        }
+                        `}
+                onClick={() => handleDotClick(index)}
+              />
+            ))}
+          </div>
+
+          {currentSection === sections.length - 1 && (
+            <button
+              className="bg-[#FFCB70] hover:bg-[#f59723] text-black font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
+              type="submit"
+              onClick={handleSubmit}
+            >
+              Generate
+            </button>
+          )}
         </div>
       </form>
     </div>
