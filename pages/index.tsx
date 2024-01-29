@@ -12,7 +12,7 @@ const Home: React.FC = () => {
 
   const handleFormSubmit = (formData: any) => {
 
-    const prompt =  `Write 1200-1600 word SOP incorporating the following details:\n`+ formFields.map(section => section.fields.map(field => `${field.label}: ${formData[field.name]}`).join(",\n"));
+    const prompt = `Write 1200-1600 word SOP incorporating the following details:\n`+ formFields.map(section => section.fields.map(field => `${field.label}: ${formData[field.name]}`).join(",\n"));
   
     setGeneratedText(prompt);
     setKey(prevKey => prevKey + 1);
