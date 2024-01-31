@@ -11,12 +11,19 @@ const Home: React.FC = () => {
   const [currentSection, setCurrentSection] = useState(0);
 
   const handleFormSubmit = (formData: any) => {
-    const prompt = formFields.map((section) => section.fields.map((field) => `${field.label}: ${formData[field.name]}`).join(",\n")).join(",\n\n") +
-      "\n\nWrite 1200-1600 word SOP incorporating the above details.";
+    const prompt = `${formFields.map((section) => {
+      return `${section.title} paragraph;\n\n${section.fields.map((field) => {
+          if (formData[field.name]) {
+              return `${field.label}: ${formData[field.name]}`;
+          }
+          return ''; 
+      }).filter(Boolean).join(',\n')}`;
+  }).join(',\n\n')}\n\nWrite a 1600 word SOP incorporating the above details.`;
 
     setGeneratedText(prompt);
     setKey((prevKey) => prevKey + 1);
 
+    console.log(prompt);
   };
 
   const handleNextClick = () => {

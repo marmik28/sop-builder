@@ -23,7 +23,7 @@ const ChatGPT: React.FC<ChatGPTProps> = ({ prompt }) => {
             messages: [
               {
                 role: "system",
-                content: `You specialize in writing Statements of Purpose (SOP) for Canada visa applications. Craft a comprehensive and compelling SOP for applicants. The SOP MUST be of 1200 to 1600 words, and strictly follow this format:
+                content: `You specialize in writing Statements of Purpose (SOP) for Canada visa applications. Craft a comprehensive and compelling SOP for applicants. The SOP MUST be of 1600 words, and strictly follow this format:
                 1. Introduction
                 2. Personal Information
                 3. Academic Background
