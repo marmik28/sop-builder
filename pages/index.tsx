@@ -11,12 +11,19 @@ const Home: React.FC = () => {
   const [currentSection, setCurrentSection] = useState(0);
 
   const handleFormSubmit = (formData: any) => {
-    const prompt = formFields.map((section) => section.fields.map((field) => `${field.label}: ${formData[field.name]}`).join(",\n")).join(",\n\n") +
-      "\n\nWrite 1200-1600 word SOP incorporating the above details.";
+    const prompt = `${formFields.map((section) => {
+      return `${section.title} paragraph;\n\n${section.fields.map((field) => {
+          if (formData[field.name]) {
+              return `${field.label}: ${formData[field.name]}`;
+          }
+          return ''; 
+      }).filter(Boolean).join(',\n')}`;
+  }).join(',\n\n')}\n\nWrite a SOWP SOP in 1600 words, incorporating the above details.`;
 
     setGeneratedText(prompt);
     setKey((prevKey) => prevKey + 1);
 
+    console.log(prompt);
   };
 
   const handleNextClick = () => {
@@ -30,11 +37,11 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       <div className="flex items-center justify-center">
-        <h1 className="text-[40px] font-semibold">SOP Builder</h1>
+        <h1 className="text-[40px] font-semibold">SOWP Statement Builder</h1>
       </div>
       <div className="container mx-auto p-6 bg-white">
         <div className="flex responsive-container flex-col justify-center items-center">
-          <div className="form-container w-[720px]">
+          <div className="form-container w-full px-10">
             <Form
               onFormSubmit={handleFormSubmit}
               sections={formFields}
