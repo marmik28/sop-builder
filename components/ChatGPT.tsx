@@ -19,26 +19,25 @@ const ChatGPT: React.FC<ChatGPTProps> = ({ prompt }) => {
         const result = await axios.post(
           "https://api.openai.com/v1/chat/completions",
           {
-            model: "gpt-4",
+            model: "gpt-4-0125-preview",
             messages: [
               {
                 role: "system",
-                content: `You specialize in writing Statements of Purpose (SOP) for Canada visa applications. Craft a comprehensive and compelling SOP for applicants. The SOP MUST be of 1600 words, and strictly follow this format:
-                1. Introduction
-                2. Personal Information
-                3. Academic Background
-                4. Reasons to Select the Course
-                5. Reasons for Attending a Specific University
-                6. Objectives
-                7. Source of Funds
-                8. Conclusion`,
+                content: `You specialize in writing Statement of Purpose (SOP) for Canada SOWP (Spousal Open Work Permit) applications. Craft a comprehensive and compelling SOP for applicants. The SOP MUST be of 1600 words, and strictly follow this format:\n
+                1. Introduction.\n
+                2. Relationship Story.\n
+                3. Engagement, Marriage and Honeymoon.\n
+                4. Willingness to be with spouse.\n
+                5. My Work plan.
+                6. Strong ties to India.\n
+                7. Conclusion`,
               },
               {
                 role: "user",
                 content: prompt,
               },
             ],
-            max_tokens: 3097,
+            max_tokens: 4096,
           },
           {
             headers: {

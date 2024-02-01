@@ -7,6 +7,7 @@ interface Field {
   label: string;
   placeholder: string;
   required: boolean;
+  inputType: string;
 }
 
 interface FormSection {
@@ -63,7 +64,7 @@ const Form: React.FC<FormProps> = ({
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            type="text"
+            type={field.inputType}
             id={field.name}
             name={field.name}
             value={formData[field.name]}
