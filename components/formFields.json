@@ -1,320 +1,325 @@
 [
   {
-    "title": "Introduction",
-    "fields": [
+    "prompt": "",
+    "builder": [
       {
-        "name": "yourName",
-        "label": "Your Name",
-        "placeholder": "Your Name",
-        "required": true,
-        "inputType": "text"
+        "title": "Introduction",
+        "fields": [
+          {
+            "name": "yourName",
+            "label": "Your Name",
+            "placeholder": "Your Name",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "spouseName",
+            "label": "Name of Spouse",
+            "placeholder": "Name of Spouse",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "spouseInCanada",
+            "label": "Is your spouse in Canada?",
+            "placeholder": "Yes/No",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "spousePermitStatus",
+            "label": "Are they on work or study permit?",
+            "placeholder": "Work/Study permit",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "workPermitType",
+            "label": "Open or closed work permit?",
+            "placeholder": "If working, Open/Closed Work Permit?",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "jobTitle",
+            "label": "Job Title",
+            "placeholder": "Job Title (If Working)",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "teerCategory",
+            "label": "TEER Category",
+            "placeholder": "(0, 1, 2, 3, 4, and 5)",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "jobCity",
+            "label": "Job City",
+            "placeholder": "(City of residence if remote)",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "province",
+            "label": "Province",
+            "placeholder": "Province",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "studyPermitStartDate",
+            "label": "Start date of study permit",
+            "placeholder": "Start date of study permit",
+            "required": true,
+            "inputType": "date"
+          },
+          {
+            "name": "studyPermitEndDate",
+            "label": "End date of study permit",
+            "placeholder": "End date of study permit",
+            "required": true,
+            "inputType": "date"
+          },
+          {
+            "name": "extendOrApplyWorkPermit",
+            "label": "Are you planning to extend your study permit or apply for work permit?",
+            "placeholder": "If your study permit is expiring in the next six months",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "spouseDegree",
+            "label": "Degree pursued by spouse",
+            "placeholder": "Degree pursued by spouse",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "courseName",
+            "label": "Course Name",
+            "placeholder": "Course Name",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "universityName",
+            "label": "College/University Name",
+            "placeholder": "College/University Name",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "programStartDate",
+            "label": "Start date of program",
+            "placeholder": "Start date of program",
+            "required": true,
+            "inputType": "date"
+          },
+          {
+            "name": "programEndDate",
+            "label": "End date of program",
+            "placeholder": "End date of program",
+            "required": true,
+            "inputType": "date"
+          }
+        ]
       },
       {
-        "name": "spouseName",
-        "label": "Name of Spouse",
-        "placeholder": "Name of Spouse",
-        "required": true,
-        "inputType": "text"
+        "title": "Relationship (Love)",
+        "fields": [
+          {
+            "name": "firstContactwho",
+            "label": "Who initiated the first contact?",
+            "placeholder": "You or your Spouse?",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "firstContactDetails",
+            "label": "Details of the first contact",
+            "placeholder": "My husband contacted me via Facebook, Instagram, a Dating Website, etc.",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "datingJourneyDetails",
+            "label": "Dating journey details",
+            "placeholder": "Explain your dates, understanding, places visited together and bonding, special memories, occasions",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "marriageTalksDetails",
+            "label": "Initiation of marriage talks",
+            "placeholder": "Who initiated the first talks about marriage and how you broke the news to parents and any difficulties faced convincing them, how did you convince them, in great detail.",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "familyDecisionDetails",
+            "label": "Family decision details",
+            "placeholder": "How and when they met, along with the date and place where both families met, and whether the talks went smoothly or not. How everything was decided.",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "engagementCeremonyDetails",
+            "label": "Engagement ceremony details",
+            "placeholder": "Date and place where it was done, whether it was an intimate gathering or a ceremony, etc",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "weddingCeremonyDetails",
+            "label": "Wedding ceremony details",
+            "placeholder": "Date and place where it was done, whether it was an intimate gathering or a ceremony, etc",
+            "required": true,
+            "inputType": "text"
+          }
+        ]
       },
       {
-        "name": "spouseInCanada",
-        "label": "Is your spouse in Canada?",
-        "placeholder": "Yes/No",
-        "required": true,
-        "inputType": "text"
+        "title": "Relationship (Arrange)",
+        "fields": [
+          {
+            "name": "matchFindingDetails",
+            "label": "How did you find the match?",
+            "placeholder": "Did you find the match on a matrimonial website or application? or family member brought the rishta for marriage?",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "journeyDetails",
+            "label": "Journey details",
+            "placeholder": "Please explain the journey, how you came to contact each other, and how many dates you guys went, How marriage talk started",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "firstMeetingDetails",
+            "label": "First meeting details",
+            "placeholder": "Who went to whose house for the first meeting?",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "firstSightReaction",
+            "label": "First sight reaction",
+            "placeholder": "What was your reaction to seeing your spouse for the first time",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "startOfCommunication",
+            "label": "Start of communication",
+            "placeholder": "When did you start talking or chatting with your spouse",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "courtshipOccasions",
+            "label": "Courtship occasions",
+            "placeholder": "Any significant occasions which you celebrated during your courtship, such as birthdays or any other occasions",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "arrangeEngagementDetails",
+            "label": "Engagement ceremony details",
+            "placeholder": "Date and place where it was done, whether it was an intimate gathering or a ceremony, etc",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "arrangeWeddingDetails",
+            "label": "Wedding ceremony details",
+            "placeholder": "Date and place where it was done, whether it was an intimate gathering or a ceremony, etc",
+            "required": true,
+            "inputType": "text"
+          }
+        ]
       },
       {
-        "name": "spousePermitStatus",
-        "label": "Are they on work or study permit?",
-        "placeholder": "Work/Study permit",
-        "required": true,
-        "inputType": "text"
+        "title": "Willingness to be with spouse",
+        "fields": [
+          {
+            "name": "motivationForWorkPermit",
+            "label": "Motivation for Spousal Open Work Permit",
+            "placeholder": "Motivation for Spousal Open Work Permit",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "educationLevel",
+            "label": "Highest level of education",
+            "placeholder": "(Primary School, Secondary School, High School, Diploma, Bachelors, PG or Masters)",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "grades",
+            "label": "Grades",
+            "placeholder": "Final grade in your highest level of education",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "professionalJourney",
+            "label": "Professional journey",
+            "placeholder": "Mention in as much detail as possible about your professional journey, from your first job to the most recent one and also mention in details your roles and responsibilities",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "jobInCanada",
+            "label": "Job in Canada",
+            "placeholder": "What kind of job are you looking for in Canada?",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "contributionToSociety",
+            "label": "Contribution to Canadian workforce and society",
+            "placeholder": "Contribution to Canadian workforce and society",
+            "required": true,
+            "inputType": "text"
+          }
+        ]
       },
       {
-        "name": "workPermitType",
-        "label": "Open or closed work permit?",
-        "placeholder": "If working, Open/Closed Work Permit?",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "jobTitle",
-        "label": "Job Title",
-        "placeholder": "Job Title (If Working)",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "teerCategory",
-        "label": "TEER Category",
-        "placeholder": "(0, 1, 2, 3, 4, and 5)",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "jobCity",
-        "label": "Job City",
-        "placeholder": "(City of residence if remote)",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "province",
-        "label": "Province",
-        "placeholder": "Province",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "studyPermitStartDate",
-        "label": "Start date of study permit",
-        "placeholder": "Start date of study permit",
-        "required": true,
-        "inputType": "date"
-      },
-      {
-        "name": "studyPermitEndDate",
-        "label": "End date of study permit",
-        "placeholder": "End date of study permit",
-        "required": true,
-        "inputType": "date"
-      },
-      {
-        "name": "extendOrApplyWorkPermit",
-        "label": "Are you planning to extend your study permit or apply for work permit?",
-        "placeholder": "If your study permit is expiring in the next six months",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "spouseDegree",
-        "label": "Degree pursued by spouse",
-        "placeholder": "Degree pursued by spouse",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "courseName",
-        "label": "Course Name",
-        "placeholder": "Course Name",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "universityName",
-        "label": "College/University Name",
-        "placeholder": "College/University Name",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "programStartDate",
-        "label": "Start date of program",
-        "placeholder": "Start date of program",
-        "required": true,
-        "inputType": "date"
-      },
-      {
-        "name": "programEndDate",
-        "label": "End date of program",
-        "placeholder": "End date of program",
-        "required": true,
-        "inputType": "date"
-      }
-    ]
-  },
-  {
-    "title": "Relationship (Love)",
-    "fields": [
-      {
-        "name": "firstContactwho",
-        "label": "Who initiated the first contact?",
-        "placeholder": "You or your Spouse?",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "firstContactDetails",
-        "label": "Details of the first contact",
-        "placeholder": "My husband contacted me via Facebook, Instagram, a Dating Website, etc.",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "datingJourneyDetails",
-        "label": "Dating journey details",
-        "placeholder": "Explain your dates, understanding, places visited together and bonding, special memories, occasions",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "marriageTalksDetails",
-        "label": "Initiation of marriage talks",
-        "placeholder": "Who initiated the first talks about marriage and how you broke the news to parents and any difficulties faced convincing them, how did you convince them, in great detail.",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "familyDecisionDetails",
-        "label": "Family decision details",
-        "placeholder": "How and when they met, along with the date and place where both families met, and whether the talks went smoothly or not. How everything was decided.",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "engagementCeremonyDetails",
-        "label": "Engagement ceremony details",
-        "placeholder": "Date and place where it was done, whether it was an intimate gathering or a ceremony, etc",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "weddingCeremonyDetails",
-        "label": "Wedding ceremony details",
-        "placeholder": "Date and place where it was done, whether it was an intimate gathering or a ceremony, etc",
-        "required": true,
-        "inputType": "text"
-      }
-    ]
-  },
-  {
-    "title": "Relationship (Arrange)",
-    "fields": [
-      {
-        "name": "matchFindingDetails",
-        "label": "How did you find the match?",
-        "placeholder": "Did you find the match on a matrimonial website or application? or family member brought the rishta for marriage?",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "journeyDetails",
-        "label": "Journey details",
-        "placeholder": "Please explain the journey, how you came to contact each other, and how many dates you guys went, How marriage talk started",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "firstMeetingDetails",
-        "label": "First meeting details",
-        "placeholder": "Who went to whose house for the first meeting?",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "firstSightReaction",
-        "label": "First sight reaction",
-        "placeholder": "What was your reaction to seeing your spouse for the first time",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "startOfCommunication",
-        "label": "Start of communication",
-        "placeholder": "When did you start talking or chatting with your spouse",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "courtshipOccasions",
-        "label": "Courtship occasions",
-        "placeholder": "Any significant occasions which you celebrated during your courtship, such as birthdays or any other occasions",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "arrangeEngagementDetails",
-        "label": "Engagement ceremony details",
-        "placeholder": "Date and place where it was done, whether it was an intimate gathering or a ceremony, etc",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "arrangeWeddingDetails",
-        "label": "Wedding ceremony details",
-        "placeholder": "Date and place where it was done, whether it was an intimate gathering or a ceremony, etc",
-        "required": true,
-        "inputType": "text"
-      }
-    ]
-  },
-  {
-    "title": "Willingness to be with spouse",
-    "fields": [
-      {
-        "name": "motivationForWorkPermit",
-        "label": "Motivation for Spousal Open Work Permit",
-        "placeholder": "Motivation for Spousal Open Work Permit",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "educationLevel",
-        "label": "Highest level of education",
-        "placeholder": "(Primary School, Secondary School, High School, Diploma, Bachelors, PG or Masters)",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "grades",
-        "label": "Grades",
-        "placeholder": "Final grade in your highest level of education",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "professionalJourney",
-        "label": "Professional journey",
-        "placeholder": "Mention in as much detail as possible about your professional journey, from your first job to the most recent one and also mention in details your roles and responsibilities",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "jobInCanada",
-        "label": "Job in Canada",
-        "placeholder": "What kind of job are you looking for in Canada?",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "contributionToSociety",
-        "label": "Contribution to Canadian workforce and society",
-        "placeholder": "Contribution to Canadian workforce and society",
-        "required": true,
-        "inputType": "text"
-      }
-    ]
-  },
-  {
-    "title": "Strong ties to India",
-    "fields": [
-      {
-        "name": "indiaFinancialAssets",
-        "label": "Financial assets and resources in India",
-        "placeholder": "Land assests, Savings, Investments etc",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "reasonsToReturnToIndia",
-        "label": "Reasons to return to India.",
-        "placeholder": "Parents in India, Family Business, Ambition to contribute to your motherland.",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "spouseProfessionalHorizons",
-        "label": "Spouse's professional horizons in India",
-        "placeholder": "How will education or work experience of your spouse help them after coming to India.",
-        "required": true,
-        "inputType": "text"
-      },
-      {
-        "name": "returnToIndiaPlans",
-        "label": "Plans to return to India before allowed stay in Canada expires",
-        "placeholder": "Plans to return to India before allowed stay in Canada expires",
-        "required": true,
-        "inputType": "text"
+        "title": "Strong ties to India",
+        "fields": [
+          {
+            "name": "indiaFinancialAssets",
+            "label": "Financial assets and resources in India",
+            "placeholder": "Land assests, Savings, Investments etc",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "reasonsToReturnToIndia",
+            "label": "Reasons to return to India.",
+            "placeholder": "Parents in India, Family Business, Ambition to contribute to your motherland.",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "spouseProfessionalHorizons",
+            "label": "Spouse's professional horizons in India",
+            "placeholder": "How will education or work experience of your spouse help them after coming to India.",
+            "required": true,
+            "inputType": "text"
+          },
+          {
+            "name": "returnToIndiaPlans",
+            "label": "Plans to return to India before allowed stay in Canada expires",
+            "placeholder": "Plans to return to India before allowed stay in Canada expires",
+            "required": true,
+            "inputType": "text"
+          }
+        ]
       }
     ]
   }

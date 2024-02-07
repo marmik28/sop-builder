@@ -12,7 +12,7 @@ const Home: React.FC = () => {
 
   const handleFormSubmit = (formData: any) => {
     const prompt = `${formFields.map((section) => {
-      return `${section.title} paragraph;\n\n${section.fields.map((field) => {
+      return `${section.builder[currentSection].title} paragraph;\n${section.builder[currentSection].fields.map((field) => {
           if (formData[field.name]) {
               return `${field.label}: ${formData[field.name]}`;
           }
@@ -26,12 +26,16 @@ const Home: React.FC = () => {
     console.log(prompt);
   };
 
-  const handleNextClick = () => {
-    setCurrentSection(currentSection + 1);
+  const handlePrevClick = () => {
+    if (currentSection > 0) {
+      setCurrentSection(currentSection - 1);
+    }
   };
 
-  const handlePrevClick = () => {
-    setCurrentSection(currentSection - 1);
+  const handleNextClick = () => {
+    if (currentSection < formFields.length - 1) {
+      setCurrentSection(currentSection + 1);
+    }
   };
 
   return (

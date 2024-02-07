@@ -15,9 +15,14 @@ interface FormSection {
   fields: Field[];
 }
 
+interface Builders{
+  prompt: string;
+  builder: FormSection[];
+}
+
 interface FormProps {
   onFormSubmit: (formData: any) => void;
-  sections: FormSection[];
+  sections: Builders[];
   currentSection: number;
   onPrevClick: () => void;
   onNextClick: () => void;
@@ -33,7 +38,7 @@ const Form: React.FC<FormProps> = ({
   const section = sections[currentSection];
   const initialFormData: Record<string, string> = {};
 
-  section.fields.forEach((field) => {
+  section.builder[currentSection].fields.forEach((field: { name: string; }) => {
     initialFormData[field.name] = "";
   });
 
@@ -53,8 +58,8 @@ const Form: React.FC<FormProps> = ({
 
   return (
     <form className="bg-[#f5f5f5] shadow-md rounded px-8 pt-6 pb-8 mb-4 text-size-tablet">
-      <h2 className="text-[26px] font-semibold mt-4 mb-2">{section.title}</h2>
-      {section.fields.map((field) => (
+      <h2 className="text-[26px] font-semibold mt-4 mb-2">{section.builder[currentSection].title}</h2>
+      {section.builder[currentSection].fields.map((field) => (
         <div className="mb-4" key={field.name}>
           <label
             className="block text-gray-700 text-m font-bold mb-1"
@@ -88,17 +93,17 @@ const Form: React.FC<FormProps> = ({
             Previous
           </button>
 
-          {currentSection !== sections.length - 1 && (
+          {currentSection !== section.builder.length - 1 && (
             <button
               className="bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
               type="button"
               onClick={onNextClick}
-              disabled={currentSection === sections.length - 1}
+              disabled={currentSection === section.builder.length - 1}
             >
               Next
             </button>
           )}
-          {currentSection === sections.length - 1 && (
+          {currentSection === section.builder.length - 1 && (
             <button
               className="bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
               type="submit"
