@@ -37,7 +37,7 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       <div className="flex items-center justify-center">
-        <h1 className="text-[40px] font-semibold">SOWP Statement Builder</h1>
+        <h1 className="text-center text-[40px] font-semibold">SOWP Statement Builder</h1>
       </div>
       <div className="container mx-auto p-6 bg-white">
         <div className="flex responsive-container flex-col justify-center items-center">
