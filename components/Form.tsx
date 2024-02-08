@@ -1,44 +1,18 @@
 // components/Form.tsx
 import React, { useState } from "react";
 import "../app/globals.css";
-
-interface Field {
-  name: string;
-  label: string;
-  placeholder: string;
-  required: boolean;
-  inputType: string;
-}
-
-interface FormSection {
-  title: string;
-  fields: Field[];
-}
-
-interface Builders{
-  prompt: string;
-  builder: FormSection[];
-}
+import formFields from "./formFields.json";
 
 interface FormProps {
   onFormSubmit: (formData: any) => void;
-  sections: Builders[];
-  currentSection: number;
-  onPrevClick: () => void;
-  onNextClick: () => void;
 }
 
-const Form: React.FC<FormProps> = ({
-  onFormSubmit,
-  sections,
-  currentSection,
-  onPrevClick,
-  onNextClick,
-}) => {
-  const section = sections[currentSection];
+const Form: React.FC<FormProps> = ({ onFormSubmit }) => {
+  const [currentSection, setCurrentSection] = useState(0);
+  const sections = formFields[0].builder;
   const initialFormData: Record<string, string> = {};
 
-  section.builder[currentSection].fields.forEach((field: { name: string; }) => {
+  sections[1].fields.forEach((field: { name: string; }) => {
     initialFormData[field.name] = "";
   });
 
@@ -51,18 +25,23 @@ const Form: React.FC<FormProps> = ({
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onFormSubmit(formData);
+  const handleNextSection = () => {
+    setCurrentSection(currentSection + 1);
+  };
+
+  const handlePreviousSection = () => {
+    setCurrentSection(currentSection - 1);
   };
 
   return (
     <form className="bg-[#f5f5f5] shadow-md rounded px-8 pt-6 pb-8 mb-4 text-size-tablet">
-      <h2 className="text-[26px] font-semibold mt-4 mb-2">{section.builder[currentSection].title}</h2>
-      {section.builder[currentSection].fields.map((field) => (
+      <h2 className="text-[26px] font-semibold mt-4 mb-2">
+        {sections[currentSection].title}
+      </h2>
+      {sections[currentSection].fields.map((field) => (
         <div className="mb-4" key={field.name}>
           <label
-            className="block text-gray-700 text-m font-bold mb-1"
+            className="block text-gray-700 text-sm font-bold mb-1"
             htmlFor={field.name}
           >
             {field.label}
@@ -72,7 +51,7 @@ const Form: React.FC<FormProps> = ({
             type={field.inputType}
             id={field.name}
             name={field.name}
-            value={formData[field.name]}
+            value={formData[field.name] || ""}
             onChange={handleInputChange}
             placeholder={field.placeholder}
             required={field.required}
@@ -87,27 +66,26 @@ const Form: React.FC<FormProps> = ({
               currentSection === 0 ? "opacity-50 cursor-not-allowed" : ""
             }`}
             type="button"
-            onClick={onPrevClick}
+            onClick={handlePreviousSection}
             disabled={currentSection === 0}
           >
             Previous
           </button>
 
-          {currentSection !== section.builder.length - 1 && (
+          {currentSection !== sections.length - 1 && (
             <button
               className="bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
               type="button"
-              onClick={onNextClick}
-              disabled={currentSection === section.builder.length - 1}
+              onClick={handleNextSection}
             >
               Next
             </button>
           )}
-          {currentSection === section.builder.length - 1 && (
+          {currentSection === sections.length - 1 && (
             <button
               className="bg-[#FFCB70] hover:bg-[#f59723] text-black w-1/2 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
               type="submit"
-              onClick={handleSubmit}
+              onClick={onFormSubmit}
             >
               Generate
             </button>

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader";
+import formFields from "../components/formFields.json";
 
 interface ChatGPTProps {
   prompt: string;
@@ -23,25 +24,7 @@ const ChatGPT: React.FC<ChatGPTProps> = ({ prompt }) => {
             messages: [
               {
                 role: "system",
-                content: `You specialize in writing Statement of Purpose (SOP) for Canada SOWP (Spousal Open Work Permit) applications. Craft a comprehensive and compelling SOP for applicants. The SOP MUST be of 1600 words, and strictly follow this format:\n
-                1. Introduction.\n
-                2. Relationship Story.\n
-                  a) This should be 3 paragraph long and in detail.
-                3. Engagement, Marriage and Honeymoon.\n
-                4. Willingness to be with spouse.\n
-                5. My Work plan.
-                6. Strong ties to India.\n
-                7. Conclusion.\n
-                format of conclusion:\n
-                I hereby acknowledge and declare that:\n
-                ● All the information given by me here is true, accurate, and complete.\n
-                ● We have no intention to stay beyond my permitted days.\n
-                ● [Spouse Name] and I are fully aware of the Canadian Immigration Regulations for the temporary visa, and we will
-                for sure abide by them respectfully.\n
-                ● [Spouse Name] and I will immediately leave Canada at the end of our authorised stay.\n\n
-                ● [Spouse Name] and I shall utilise our visit only for the purpose for which the Visa has been applied for.\n\n
-                Paragraph expressing gratitiude towards your families.\n
-                {Conclusion goes here}.`,
+                content: `${formFields[0].prompt}`,
               },
               {
                 role: "user",

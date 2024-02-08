@@ -26,32 +26,16 @@ const Home: React.FC = () => {
     console.log(prompt);
   };
 
-  const handlePrevClick = () => {
-    if (currentSection > 0) {
-      setCurrentSection(currentSection - 1);
-    }
-  };
-
-  const handleNextClick = () => {
-    if (currentSection < formFields.length - 1) {
-      setCurrentSection(currentSection + 1);
-    }
-  };
-
   return (
     <div className="min-h-screen">
       <div className="flex items-center justify-center">
-        <h1 className="text-center text-[40px] font-semibold">SOWP Statement Builder</h1>
+        <h1 className="text-center text-[40px] font-semibold">{formFields[0].builderTitle}</h1>
       </div>
       <div className="container mx-auto p-6 bg-white">
         <div className="flex responsive-container flex-col justify-center items-center">
           <div className="form-container w-full px-10">
             <Form
               onFormSubmit={handleFormSubmit}
-              sections={formFields}
-              currentSection={currentSection}
-              onPrevClick={handlePrevClick}
-              onNextClick={handleNextClick}
             />
           </div>
           {generatedText && (
